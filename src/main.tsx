@@ -5,6 +5,7 @@ import './index.css'
 import { MemoryGame } from './MemoryGame.tsx'
 import { SpiralMatrix } from './SprialMatrix.tsx'
 import { SpiralBox } from './SprialBox.tsx'
+import React from 'react'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

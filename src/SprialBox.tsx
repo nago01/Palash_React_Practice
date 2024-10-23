@@ -1,13 +1,22 @@
 import { useState } from 'react';
 import './SprialBox.css';
+import React from 'react';
 export const SpiralBox = (prop) => {
-
-    const [count, setCount] = useState(prop?.count);
-
-    console.log(count, 'count');
+    const [totalBox, setTotalBox] = useState(10);
+    const childComponent = (val) => {
+        if(val>totalBox){
+            return <div></div>
+        }
+        return  (
+            <>
+        <div style={{"display": "flex", "width": `${(1000/totalBox)*val}px`, "height": `${(1000/totalBox)*val}px`, "border":"2px solid white" , "alignItems" : "center" , "justifyContent": "center"}}>
+        {childComponent(val+1)}
+        </div>
+     
+        </>
+        ); 
+    }
     return (<div className="mainContainer">
-        { count >0 && count<1000 && 
-         <div style={{"display": "flex", "width": `${count*100}px`, "height": `${count*100}px`, "border":"10px solid white" , "alignItems" : "center"}}></div> }
-         <SpiralBox/>
+        {childComponent(1)}
     </div>);
 }
