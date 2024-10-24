@@ -1,14 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import { data } from './assets/employeeData';
+import { useEffect, useState } from "react";
+import { data } from "./assets/employeeData";
 
-function App() {
-  const [employeeList, setEmployeeList] = useState(data);
+const EmployeeManagement = () => {
+    const [employeeList, setEmployeeList] = useState(data);
   const [id, setId] = useState(0);
   const [search, currSearch] = useState('');
-  useRef();
+
   const handleChange = (e) => {
     currSearch(e.target.value);
   };
@@ -55,5 +52,3 @@ function App() {
     </>
   );
 }
-
-export default App;

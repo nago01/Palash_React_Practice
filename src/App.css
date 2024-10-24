@@ -77,3 +77,20 @@
   height: 150px;
   border-radius: 50%;
 }
+
+.gridLayout {
+  display : grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height : 200px;
+  border-radius: 20%;
+  background-color: lightblue;
+  margin: 20px;
+  border: 5px solid blue;
+}
