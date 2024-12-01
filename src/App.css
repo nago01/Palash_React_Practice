@@ -37,14 +37,14 @@
 
 .gridLayout {
   display : grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: fit-content;
   height : 200px;
   border-radius: 20%;
   background-color: lightblue;
