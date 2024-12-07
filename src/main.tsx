@@ -9,13 +9,16 @@ import { FileFolderManager } from './FileFolderManager.tsx'
 import { FileFolderComponent } from './FileFolderComponent.tsx'
 import { fileFolderData } from './assets/fileFolderData.tsx'
 import React from 'react'
+import { ReactJsCleanUp } from './ReactJsCleanUp.tsx'
+import { CommentSelection } from './CommentSelection/CommentSelection.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
+  <>
+    {/* <App /> */}
     {/* <Counter/> */}
     {/* <UserLanding/> */}
     {/* <MemoryGame/> */}
     {/* <FileFolderComponent list={fileFolderData}/> */}
-  </StrictMode>,
+    <CommentSelection/>
+  </>,
 )
