@@ -10,6 +10,7 @@ export const CommentSelection = () => {
         obj["text"] = currText;
         obj["like"] = 0;
         obj["dislike"] = 0;
+        obj["time"] = new Date().getTime();
         setList(() => {
             let currList = [...list];
             // below one is wrong as it will create a reference to same object/array
@@ -20,7 +21,23 @@ export const CommentSelection = () => {
         })
         setCurrText("");
     }
-    console.log(list, 'list');
+    const customSortAsc = (item1, item2) => {
+        if (item1.time < item2.time) {
+            return -1;
+        }
+        else {
+            return 1;
+        }
+    }
+
+    const customSortDesc = (item1, item2) => {
+        if (item1.time < item2.time) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
     const CommentComponent = (prop) => {
         const { item, index } = prop;
         console.log(item, 'item');
@@ -28,6 +45,7 @@ export const CommentSelection = () => {
             {item.text}
             Likes : {item.like}
             DisLikes : {item.dislike}
+            TIME : {item.time}
             <button onClick={() => {
                 let newArray = [...list];
                 item.like++;
@@ -42,14 +60,24 @@ export const CommentSelection = () => {
             }}>disLike</button>
             <button onClick={() => {
                 let newArray = [...list];
-                newArray = newArray.filter((i)=>{
-                  if(i.text != item.text){
-                    return i;
-                  }
+                newArray = newArray.filter((i) => {
+                    if (i.text != item.text) {
+                        return i;
+                    }
                 })
-                console.log(newArray , 'newArray');
+                console.log(newArray, 'newArray');
                 setList(() => { return newArray });
             }}>Delete Comment</button>
+            <button onClick={() => {
+                let newArray = [...list];
+                newArray.sort(customSortAsc);
+                setList(newArray);
+            }}>Sort Asc</button>
+            <button onClick={() => {
+                let newArray = [...list];
+                newArray.sort(customSortDesc);
+                setList(newArray);
+            }}>Sort Des</button>
         </div>
     }
     return <div>
