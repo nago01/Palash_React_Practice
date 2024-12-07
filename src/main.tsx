@@ -11,6 +11,8 @@ import { fileFolderData } from './assets/fileFolderData.tsx'
 import React from 'react'
 import { ReactJsCleanUp } from './ReactJsCleanUp.tsx'
 import { CommentSelection } from './CommentSelection/CommentSelection.tsx'
+import { EmployeeManagement } from './RevisionEmployeeManagementSystem/EmployeeManagement.tsx'
+import { data } from './assets/employeeData.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <>
@@ -19,6 +21,7 @@ createRoot(document.getElementById('root')!).render(
     {/* <UserLanding/> */}
     {/* <MemoryGame/> */}
     {/* <FileFolderComponent list={fileFolderData}/> */}
-    <CommentSelection/>
+    {/* <CommentSelection/> */}
+    <EmployeeManagement data={data}/>
   </>,
 )
